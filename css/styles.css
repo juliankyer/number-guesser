@@ -1,18 +1,3 @@
-/*COLOR PALETTE
-HEADER BKGRND: #404041
-PINK Nmbr: #ED458B
-HEADER GUESSER: #E6E7E8
-BUTTON BACKGROUND: #929497
-BUTTON TXT: #FFFFFF *DOESNT CHANGE
-BTN-DISABLED BACKGROUND: #D0D2D3
-BTN HOVER: #EB008B
-LAST GUESS/TOO HIGH: #404041 (same as header backg)
-LAST GUESS NUM: #EB008B*/
-
-
-/*header*/
-
-
 body {
   font-family: "Open Sans", sans-serif;
   text-align: center;
@@ -62,13 +47,14 @@ button {
   color: #FFFFFF;
   background-color: #929497;
   width: 280px;
-  height: 30px;
+  /*height: 30px;*/
   margin: 5px 0px;
   border: none;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Open Sans", sans-serif;
   border-radius: 20px;
+  outline: none;
 }
 
 button:hover {
@@ -85,4 +71,19 @@ button:hover {
 span {
   font-family: "Open Sans Bold 700", sans-serif;
   color: #ED458B;
+}
+
+@media screen and (min-width: 340px) {
+    /*body {
+      background: yellow;
+    }*/
+
+    header {
+      font-size: 50px;
+    }
+
+    #clear {
+      display: block;
+      margin: 5px auto;
+    }
 }

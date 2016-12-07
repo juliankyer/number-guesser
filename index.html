@@ -5,14 +5,14 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=true;">
   </head>
   <body>
     <header>
       <h1><span>Number</span> Guesser</h1>
     </header>
 
-    <input id="user-guess" placeholder="Enter your guess">
+    <input id="user-guess" type="number"  placeholder="Enter your guess">
     <section id="btn-box">
       <button id="guess-btn">Guess</button>
       <button id="clear">Clear</button>
@@ -20,7 +20,7 @@
     <section id="react">
       <h4>Your last guess was</h4>
       <h2 id="num-display">#</h2>
-      <h4>Enter your guess</h4>
+      <h4 id="feedback">Enter your guess</h4>
       <button id="reset-btn">Reset</button>
     </section>
   </body>

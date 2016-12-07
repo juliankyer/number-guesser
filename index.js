@@ -3,10 +3,16 @@ var computerNumber = Math.floor(Math.random() * 100 + 1);
 var numDisplay = document.getElementById("num-display");
 var userGuess = document.getElementById("user-guess");
 var guessBtn = document.getElementById("guess-btn");
+var resetBtn = document.getElementById('reset-btn')
 var displayNumber = userGuess.value;
+var critique = document.getElementById("feedback");
+
+function emptyInput() {
+  userGuess.value = "";
+}
 
 clearBtn.addEventListener("click", function () {
-  userGuess.value = "";
+  emptyInput();
 })
 
 guessBtn.addEventListener("click", function() {
@@ -15,19 +21,25 @@ guessBtn.addEventListener("click", function() {
   checkGuess();
 })
 
+resetBtn.addEventListener("click", function() {
+  emptyInput();
+  numDisplay.innerText = "#";
+  critique.innerText = "Enter your guess";
+  computerNumber = Math.floor(Math.random() * 100 + 1);
+})
+
 function checkGuess () {
   console.log(computerNumber);
   displayNumber = parseInt(userGuess.value);
   if (displayNumber > computerNumber) {
-    console.log("Too high");
+    critique.innerText = "That's too high";
   } else if (displayNumber < computerNumber) {
-    console.log("too low");
+    critique.innerText = "That's too low";
   } else if (displayNumber===computerNumber) {
-    console.log("boom")
+    critique.innerText = "BOOM!"
+  } else {
+    critique.innerText = "...not a number.";
+    numDisplay.innerText = "?";
   }
+  emptyInput();
 }
-
-
-// function resetGame () {
-//
-// }
