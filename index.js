@@ -1,5 +1,4 @@
 var clearBtn = document.getElementById("clear");
-var computerNumber = Math.floor(Math.random() * 100 + 1);
 var numDisplay = document.getElementById("num-display");
 var userGuess = document.getElementById("user-guess");
 var guessBtn = document.getElementById("guess-btn");
@@ -8,21 +7,44 @@ var displayNumber = userGuess.value;
 var critique = document.getElementById("feedback");
 var minNumber = 1;
 var maxNumber = 100;
+// var userMin = document.getElementById("user-min");
+// var userMax = document.getElementById("user-max");
+// var newComputerNumber = computerNumber(0, 100);
+
+var computerNumber = Math.floor(Math.random() * 100 + 1);
+// function computerNumber(minNumber, maxNumber) {
+//   return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+// }
+//
+// userMin.addEventListener("input", function() {
+//   minNumber = userMin.value;
+//   minNumber = parseInt(minNumber);
+//   newComputerNumber = computerNumber(minNumber, maxNumber);
+//   console.log(newComputerNumber);
+// })
+//
+// userMax.addEventListener("input", function() {
+//   maxNumber = userMax.value;
+//   maxNumber = parseInt(maxNumber);
+//   newComputerNumber = computerNumber(minNumber, maxNumber);
+//   console.log(newComputerNumber);
+// })
+//
+
 
 function emptyInput() {
   userGuess.value = "";
 }
 
-userGuess.onkeydown = function () {
-  guessBtn.disabled = false;
+userGuess.addEventListener("keyup", function () {
+  resetBtn.disabled = false;
   clearBtn.disabled = false;
-  // guessBtn.style.backgroundColor = "#929497";
-  // clearBtn.style.backgroundColor = "#929497";
-}
+  guessBtn.disabled = false;
+})
 
 clearBtn.addEventListener("click", function () {
   emptyInput();
-  clearBtn.disabled = true;
+  clearBtn.disabled = false;
 })
 
 
@@ -56,8 +78,7 @@ function checkGuess () {
   emptyInput();
   outOfRange();
   levelUp();
-
-  }
+}
 
 function outOfRange () {
   parseInt(displayNumber);
