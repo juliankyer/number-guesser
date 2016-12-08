@@ -11,17 +11,21 @@
     <header>
       <h1><span>Number</span> Guesser</h1>
     </header>
-    
+
     <input id="user-guess" type="number" min="1" max="100" placeholder="Enter your guess">
     <section id="btn-box">
-      <button id="guess-btn" disabled="true">Guess</button>
-      <button id="clear" disabled="true">Clear</button>
+      <button id="guess-btn" disabled>Guess</button>
+      <button id="clear" disabled>Clear</button>
     </section>
     <section id="react">
-      <h4>Your last guess was</h4>
+      <h4>Enter a number...</h4>
       <h2 id="num-display">#</h2>
-      <h4 id="feedback">Enter your guess</h4>
+      <h4 id="feedback">...between 1 and 100</h4>
       <button id="reset-btn">Reset</button>
+    </section>
+    <section id="range-set">
+      <input placeholder="Set Min">
+      <input placeholder="Set Max">
     </section>
   </body>
   <script src="index.js">

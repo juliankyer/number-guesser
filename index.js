@@ -6,8 +6,8 @@ var guessBtn = document.getElementById("guess-btn");
 var resetBtn = document.getElementById('reset-btn')
 var displayNumber = userGuess.value;
 var critique = document.getElementById("feedback");
-var minNumber;
-var maxNumber;
+var minNumber = 1;
+var maxNumber = 100;
 
 function emptyInput() {
   userGuess.value = "";
@@ -16,8 +16,8 @@ function emptyInput() {
 userGuess.onkeydown = function () {
   guessBtn.disabled = false;
   clearBtn.disabled = false;
-  guessBtn.style.backgroundColor = "#929497";
-  clearBtn.style.backgroundColor = "#929497";
+  // guessBtn.style.backgroundColor = "#929497";
+  // clearBtn.style.backgroundColor = "#929497";
 }
 
 clearBtn.addEventListener("click", function () {
@@ -48,20 +48,32 @@ function checkGuess () {
   } else if (displayNumber < computerNumber) {
     critique.innerText = "That's too low";
   } else if (displayNumber===computerNumber) {
-    critique.innerText = "BOOM!"
+    critique.innerText = "BOOM!";
   } else {
     critique.innerText = "...not a number.";
     numDisplay.innerText = "?";
   }
   emptyInput();
   outOfRange();
+  levelUp();
+
   }
 
 function outOfRange () {
   parseInt(displayNumber);
-  maxNumber = 100;
-  minNumber = 1;
   if (displayNumber > maxNumber || displayNumber < minNumber) {
     critique.innerText = "That's out of range";
+  }
+}
+
+function levelUp () {
+  if (displayNumber === computerNumber) {
+    maxNumber = maxNumber += 10;
+    minNumber = minNumber -= 10;
+    alert("Nice job! To make the next round harder, your range will grow by 10 on either end!");
+    critique.innerText = "...between " + minNumber + " and " + maxNumber;
+    console.log(minNumber, maxNumber);
+    computerNumber = Math.floor(Math.random() * maxNumber + 1);
+
   }
 }

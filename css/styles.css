@@ -12,11 +12,16 @@ header {
 }
 
 input {
-  margin: 5px 0px 10px 0px;
-  width: 280px;
+  margin: 5px 5px 10px 5px;
+  width: 130px;
   height: 30px;
   text-align: center;
   font-size: 20px;
+  outline: none;
+}
+
+#user-guess {
+  width: 280px;
 }
 
 #btn-box {
@@ -65,10 +70,14 @@ button {
   background-color: #EB008B;
 }
 
-button:hover {
+button:hover:enabled {
   color: #FFFFFF;
   background-color: #EB008B;
   cursor: pointer;
+}
+
+button:enabled: {
+  background-color: #929497;
 }
 
 #reset-btn {
