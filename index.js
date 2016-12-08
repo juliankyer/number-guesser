@@ -72,8 +72,8 @@ function levelUp () {
     minNumber = minNumber -= 10;
     alert("Nice job! To make the next round harder, your range will grow by 10 on either end!");
     critique.innerText = "...between " + minNumber + " and " + maxNumber;
-    console.log(minNumber, maxNumber);
+    numDisplay.innerText = "#";
     computerNumber = Math.floor(Math.random() * maxNumber + 1);
-
+    console.log(minNumber, maxNumber);
   }
 }
