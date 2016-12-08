@@ -37,7 +37,7 @@ resetBtn.addEventListener("click", function() {
   emptyInput();
   numDisplay.innerText = "#";
   critique.innerText = "Enter your guess";
-  computerNumber = Math.floor(Math.random() * 100 + 1);
+  computerNumber = Math.floor(Math.random() * maxNumber + 1);
 })
 
 function checkGuess () {
@@ -55,7 +55,7 @@ function checkGuess () {
   }
   emptyInput();
   outOfRange();
-}
+  }
 
 function outOfRange () {
   parseInt(displayNumber);
