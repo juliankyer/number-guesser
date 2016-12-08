@@ -6,14 +6,26 @@ var guessBtn = document.getElementById("guess-btn");
 var resetBtn = document.getElementById('reset-btn')
 var displayNumber = userGuess.value;
 var critique = document.getElementById("feedback");
+var minNumber;
+var maxNumber;
 
 function emptyInput() {
   userGuess.value = "";
 }
 
+userGuess.onkeydown = function () {
+  guessBtn.disabled = false;
+  clearBtn.disabled = false;
+  guessBtn.style.backgroundColor = "#929497";
+  clearBtn.style.backgroundColor = "#929497";
+}
+
 clearBtn.addEventListener("click", function () {
   emptyInput();
+  clearBtn.disabled = true;
 })
+
+
 
 guessBtn.addEventListener("click", function() {
   var userNum = userGuess.value;
@@ -42,4 +54,14 @@ function checkGuess () {
     numDisplay.innerText = "?";
   }
   emptyInput();
+  outOfRange();
+}
+
+function outOfRange () {
+  parseInt(displayNumber);
+  maxNumber = 100;
+  minNumber = 1;
+  if (displayNumber > maxNumber || displayNumber < minNumber) {
+    critique.innerText = "That's out of range";
+  }
 }
