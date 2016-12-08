@@ -7,29 +7,8 @@ var displayNumber = userGuess.value;
 var critique = document.getElementById("feedback");
 var minNumber = 1;
 var maxNumber = 100;
-// var userMin = document.getElementById("user-min");
-// var userMax = document.getElementById("user-max");
-// var newComputerNumber = computerNumber(0, 100);
 
 var computerNumber = Math.floor(Math.random() * 100 + 1);
-// function computerNumber(minNumber, maxNumber) {
-//   return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-// }
-//
-// userMin.addEventListener("input", function() {
-//   minNumber = userMin.value;
-//   minNumber = parseInt(minNumber);
-//   newComputerNumber = computerNumber(minNumber, maxNumber);
-//   console.log(newComputerNumber);
-// })
-//
-// userMax.addEventListener("input", function() {
-//   maxNumber = userMax.value;
-//   maxNumber = parseInt(maxNumber);
-//   newComputerNumber = computerNumber(minNumber, maxNumber);
-//   console.log(newComputerNumber);
-// })
-//
 
 
 function emptyInput() {
@@ -46,8 +25,6 @@ clearBtn.addEventListener("click", function () {
   emptyInput();
   clearBtn.disabled = false;
 })
-
-
 
 guessBtn.addEventListener("click", function() {
   var userNum = userGuess.value;
@@ -98,3 +75,25 @@ function levelUp () {
     console.log(minNumber, maxNumber);
   }
 }
+
+// var userMin = document.getElementById("user-min");
+// var userMax = document.getElementById("user-max");
+// var newComputerNumber = computerNumber(0, 100);
+// function computerNumber(minNumber, maxNumber) {
+//   return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+// }
+//
+// userMin.addEventListener("input", function() {
+//   minNumber = userMin.value;
+//   minNumber = parseInt(minNumber);
+//   newComputerNumber = computerNumber(minNumber, maxNumber);
+//   console.log(newComputerNumber);
+// })
+//
+// userMax.addEventListener("input", function() {
+//   maxNumber = userMax.value;
+//   maxNumber = parseInt(maxNumber);
+//   newComputerNumber = computerNumber(minNumber, maxNumber);
+//   console.log(newComputerNumber);
+// })
+//
